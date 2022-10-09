@@ -14,8 +14,8 @@ double B2 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите значение k2");
 double K2 = Convert.ToInt32(Console.ReadLine());
 
-double X = (B1 - B2)/(K2 - K1);
-double Y = K2 * X + B2;
+double X = (B2 - B1)/(K1 - K2);
+double Y = K1 * X + B1;
 
 
 Console.WriteLine($"Точка пересечения двух прямых имеет координаты X{X}:Y{Y}");
