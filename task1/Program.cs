@@ -5,14 +5,36 @@
 -1, -7, 567, 89, 223-> 3
 */
 
-Console.WriteLine("Введите некотрое количество через пробел");
-int[] array = Array.ConvertAll(Console.ReadLine().Split(), int.Parse);
-int count = 0;
-for (int i = 0; i < array.Length; i++)
+
+Console.Write($"Введите  число М (количество чисел): ");
+int m = Convert.ToInt32(Console.ReadLine());
+int[] arrayNumbers = new int[m];
+
+void userNumbers(int m)
 {
-    if (array[i] > 0)
-    {
-        count++;
-    }
+for (int i = 0; i < m; i++)
+  {
+    Console.Write($"Введите {i+1} число: ");
+    arrayNumbers[i] = Convert.ToInt32(Console.ReadLine());
+  }
 }
-Console.WriteLine($"{count}");
+
+int NumbersMoreZero(int[] arrayNumbers)
+{
+  int count = 0;
+  for (int i = 0; i < arrayNumbers.Length; i++)
+  {
+    if(arrayNumbers[i] > 0 ) 
+    {
+        count ++; 
+    } 
+  }
+  return count;
+}
+
+userNumbers(m);
+
+int positiveNumbers = NumbersMoreZero(arrayNumbers);
+
+Console.WriteLine($"Введено чисел больше 0: {NumbersMoreZero(arrayNumbers)} ");
+
